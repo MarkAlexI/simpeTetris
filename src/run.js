@@ -249,6 +249,46 @@ function getRandomInt(min, max) {
     }
   }
   
+  //делегирование
+    const Test = document.querySelector('.wrapper');
+    Test.addEventListener('click', function(event) {
+      if (gameOver) return;
+
+      let targetItem = event.target;
+      if (targetItem.closest('.down')) {
+        // смещаем фигуру на строку вниз
+        const row = tetromino.row + 1;
+        // если опускаться больше некуда — запоминаем новое положение
+        if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+          tetromino.row = row - 1;
+          // ставим на место и смотрим на заполненные ряды
+          placeTetromino();
+          return;
+        }
+        // запоминаем строку, куда стала фигура
+        tetromino.row = row;
+      }
+      if (targetItem.closest('#right')) {
+        const col = tetromino.col + 1;
+        if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+          tetromino.col = col;
+        }
+      }
+      if (targetItem.closest('.up')) {
+        // поворачиваем фигуру на 90 градусов
+        const matrix = rotate(tetromino.matrix);
+        // если так ходить можно — запоминаем
+        if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+          tetromino.matrix = matrix;
+        }
+      }
+      if (targetItem.closest('.left')) {
+        const col = tetromino.col - 1;
+        if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+          tetromino.col = col;
+        }
+      }
+    });
   // listen to keyboard events to move the active tetromino
   document.addEventListener('keydown', function(e) {
     if (gameOver) return;
