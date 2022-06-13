@@ -13,4 +13,27 @@ body {
 
 canvas {
   border: 1px solid white;
+  margin: 0px auto;
 }
+
+    .wrapper {
+      position: relative;
+      margin: 0px auto;
+      left: 100px;
+    }
+    .row {
+      display: flex;
+      width: 210px;
+    }
+    .arrows {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      color: black;
+      font-size: 24px;
+      text-align: center;
+      vertical-align: middle;
+      padding: 8px;
+      border-radius: 15%;
+      margin: 3px auto;
+    }
