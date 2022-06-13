@@ -3,6 +3,14 @@
 
 // get a random integer between the range of [min,max]
 // @see https://stackoverflow.com/a/1527820/2124254
+    const gamerName = prompt("Enter your name, please.") || 'hero';
+    let score = 100, totalScore = 0;
+    const outScore = document.getElementById('scores');
+        const displayScore = () => {
+      outScore.innerText = gamerName + ": " + totalScore;
+    };
+    displayScore();
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -102,6 +110,8 @@ function getRandomInt(min, max) {
             playfield[r][c] = playfield[r-1][c];
           }
         }
+        totalScore += score;
+        displayScore();
       }
       else {
         row--;
