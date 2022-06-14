@@ -18,7 +18,7 @@ canvas {
 
     .wrapper {
       position: relative;
-      margin: 0px auto;
+      margin: 10px;
       left: 5px;
     }
     .row {
