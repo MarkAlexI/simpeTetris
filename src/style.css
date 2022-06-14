@@ -18,6 +18,7 @@ canvas {
 }
 
     .wrapper {
+      display: block;
       margin: 10px;
     }
     .row {
