@@ -37,7 +37,11 @@ canvas {
       border-radius: 15%;
       margin: 3px auto;
     }
-    
+
+#record {
+  color: lightgreen;
+}
+
 #scores {
   color: white;
 }
