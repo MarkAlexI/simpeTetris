@@ -6,9 +6,12 @@
     const gamerName = prompt("Enter your name, please.") || 'hero';
     let score = 100, totalScore = 0;
     const outScore = document.getElementById('scores');
-        const displayScore = () => {
+    const maxScore = document.getElementById('record');
+    const displayScore = () => {
       outScore.innerText = gamerName + ": " + totalScore;
     };
+    let record = localStorage.getItem('record') || 'MAX-unknown: 0';
+    maxScore.innerText = record;
     displayScore();
 
 function getRandomInt(min, max) {
@@ -123,6 +126,10 @@ function getRandomInt(min, max) {
   
   // show the game over screen
   function showGameOver() {
+    +record.split(': ')[1] < totalScore
+        ? localStorage.setItem('record', 'MAX-' + gamerName + ': ' + totalScore)
+        : void 0;
+        
     cancelAnimationFrame(rAF);
     gameOver = true;
   
