@@ -135,14 +135,18 @@ function getRandomInt(min, max) {
   
     context.fillStyle = 'black';
     context.globalAlpha = 0.75;
-    context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+    context.fillRect(0, canvas.height / 4, canvas.width, 400);
   
     context.globalAlpha = 1;
     context.fillStyle = 'white';
     context.font = '36px monospace';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
+    
+    context.fillText(gamerName, canvas.width / 2, canvas.height * .25);
+    context.fillText('Your result:', canvas.width / 2, canvas.height * .33);
+    context.fillText(totalScore, canvas.width / 2, canvas.height / 2);
+    context.fillText('GAME OVER!', canvas.width / 2, canvas.height * .75);
   }
   
   const canvas = document.getElementById('game');
