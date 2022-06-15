@@ -24,7 +24,7 @@ canvas {
       display: flex;
       width: 210px;
     }
-    .arrows {
+    .arrows, pause {
       width: 40px;
       height: 40px;
       background-color: white;
