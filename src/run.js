@@ -295,6 +295,18 @@ function getRandomInt(min, max) {
   }
   
   //делегирование
+    //set pause
+    const pause = document.querySelector('.pause');
+    pause.addEventListener('click', function(event) {
+      let targetItem = event.target;
+      if (targetItem.closest('#setpause')) {
+        setPause();
+      }
+      if (targetItem.closest('#continuegame')) {
+        clearPause();
+      }
+    });
+    
     const Test = document.querySelector('.wrapper');
     Test.addEventListener('click', function(event) {
       if (gameOver) return;
