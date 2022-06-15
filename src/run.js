@@ -265,11 +265,12 @@ function getRandomInt(min, max) {
       }
     }
   
+    let speed = 35;
     // draw the active tetromino
     if (tetromino) {
-  
+      speed = 35 - totalScore/100 * 2;
       // tetromino falls every 35 frames
-      if (++count > 35) {
+      if (++count > speed) {
         tetromino.row++;
         count = 0;
   
