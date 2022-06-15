@@ -123,7 +123,30 @@ function getRandomInt(min, max) {
   
     tetromino = getNextTetromino();
   }
-  
+    //pause
+    function setPause() {
+      isPaused = true;
+      cancelAnimationFrame(rAF);
+      // рисуем чёрный прямоугольник посередине поля
+      context.fillStyle = 'black';
+      context.globalAlpha = 0.75;
+      context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+      // пишем надпись белым моноширинным шрифтом по центру
+      context.globalAlpha = 1;
+      context.fillStyle = 'white';
+      context.font = '36px monospace';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      
+      context.fillText('PAUSE', canvas.width / 2, canvas.height / 2);
+    }
+    function clearPause() {
+      if (!isPaused) return;
+      rAF = requestAnimationFrame(loop);
+      isPaused = false;
+    }
+
+
   // show the game over screen
   function showGameOver() {
     +record.split(': ')[1] < totalScore
@@ -222,6 +245,7 @@ function getRandomInt(min, max) {
   let tetromino = getNextTetromino();
   let rAF = null;  // keep track of the animation frame so we can cancel it
   let gameOver = false;
+  let isPaused = false;
   
   // game loop
   function loop() {
