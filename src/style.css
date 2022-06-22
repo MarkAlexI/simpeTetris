@@ -11,24 +11,41 @@ body {
   justify-content: center;
 }
 
-canvas {
+.tetris {
+  padding: 15px;
   border: 1px solid white;
   margin: 0px auto;
+  width: 560px;
+  height: 670px;
+}
+
+canvas {
+  float: left;
+  display: block;
+  width: 320px;
+  border: 1px solid white;
+  margin: 2px;
 }
 
 .wrapper {
+  float: right;
   display: block;
-  margin: 10px;
+  width: 210px;
+  margin: 2px;
 }
 
 .row {
-  display: flex;
-  width: 210px;
+/*  display: flex;*/
+  width: 200px;
+}
+
+.info {
+  font-size: 20px;
 }
 
 .arrows {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: white;
   color: black;
   font-size: 24px;

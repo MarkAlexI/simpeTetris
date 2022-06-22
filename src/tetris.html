@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Basic Tetris HTML Game</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <title>Basic Tetris HTML Game</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="tetris">
     <canvas width="320" height="640" id="game"></canvas>
-    
-  <div class="wrapper">
-    <div class="row info">
-      <div id="record">
-        MAX-unknown: 0
+
+    <div class="wrapper">
+      <div class="row info">
+        <div id="record">
+          MAX-unknown: 0
+        </div>
+        <div id="scores">
+          0
+        </div>
       </div>
-      <div id="scores">
-        0
+      <div class="row">
+        <div class="arrows up" id="up" data-action="up">
+          ^
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="arrows up" id="up" data-action="up">
-        ^
+      <div class="row" id="keys">
+        <div class="arrows left" id="left" data-action="left">
+          &lt;
+        </div>
+        <div class="arrows down" id="down" data-action="down">
+          l
+        </div>
+        <div class="arrows right" id="right" data-action="right">
+          &gt;
+        </div>
       </div>
-    </div>
-    <div class="row" id="keys">
-      <div class="arrows left" id="left" data-action="left">
-        &lt;
+
+      <div class="row pause">
+        <div id="pausegame" onclick="setPause()">PAUSE</div>
+        <div id="continuegame" onclick="clearPause()">CONTINUE</div>
       </div>
-      <div class="arrows down" id="down" data-action="down">
-        l
-      </div>
-      <div class="arrows right" id="right" data-action="right">
-        &gt;
-      </div>
-    </div>
-    
-    <div class="row pause">
-      <div id="pausegame" onclick="setPause()">PAUSE</div>
-      <div id="continuegame" onclick="clearPause()">CONTINUE</div>
     </div>
   </div>
-    <script src="run.js"></script>
-  </body>
+  <script src="run.js"></script>
+</body>
+
 </html>
