@@ -12,10 +12,10 @@ body {
 }
 
 .tetris {
-  padding: 15px;
+  padding: 15px 8px;
   border: 1px solid white;
   margin: 0px auto;
-  width: 560px;
+  width: 520px;
   height: 670px;
 }
 
@@ -30,17 +30,20 @@ canvas {
 .wrapper {
   float: right;
   display: block;
-  width: 210px;
+  width: 180px;
   margin: 2px;
+  padding-right: 5px;
 }
 
 .row {
 /*  display: flex;*/
-  width: 200px;
+  width: 170px;
+  user-select: none;
 }
 
 .info {
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .arrows {
@@ -54,6 +57,11 @@ canvas {
   padding: 8px;
   border-radius: 15%;
   margin: 3px auto;
+  cursor: pointer;
+}
+
+#keys {
+  display: flex;
 }
 
 .pause {
@@ -64,7 +72,7 @@ canvas {
   vertical-align: middle;
   padding: 8px;
   border-radius: 15%;
-  margin: 3px auto;
+  margin: 3px;
 }
 
 #record {
