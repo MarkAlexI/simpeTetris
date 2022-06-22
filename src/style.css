@@ -16,26 +16,39 @@ canvas {
   margin: 0px auto;
 }
 
-    .wrapper {
-      display: block;
-      margin: 10px;
-    }
-    .row {
-      display: flex;
-      width: 210px;
-    }
-    .arrows, pause {
-      width: 40px;
-      height: 40px;
-      background-color: white;
-      color: black;
-      font-size: 24px;
-      text-align: center;
-      vertical-align: middle;
-      padding: 8px;
-      border-radius: 15%;
-      margin: 3px auto;
-    }
+.wrapper {
+  display: block;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  width: 210px;
+}
+
+.arrows {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+  border-radius: 15%;
+  margin: 3px auto;
+}
+
+.pause {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+  border-radius: 15%;
+  margin: 3px auto;
+}
 
 #record {
   color: lightgreen;
