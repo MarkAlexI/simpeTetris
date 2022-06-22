@@ -15,7 +15,7 @@ body {
   padding: 15px 8px;
   border: 1px solid white;
   margin: 0px auto;
-  width: 520px;
+  width: 515px;
   height: 670px;
 }
 
@@ -33,12 +33,12 @@ canvas {
   width: 180px;
   margin: 2px;
   padding-right: 5px;
+  user-select: none;
 }
 
 .row {
 /*  display: flex;*/
   width: 170px;
-  user-select: none;
 }
 
 .info {
@@ -65,14 +65,15 @@ canvas {
 }
 
 .pause {
-  background-color: white;
+  width: 35px;
+  background-color: rgb(86, 127, 221);
   color: black;
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
   padding: 8px;
   border-radius: 15%;
-  margin: 3px;
+  margin: 50px auto 3px;
 }
 
 #record {
