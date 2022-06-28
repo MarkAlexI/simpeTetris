@@ -76,6 +76,13 @@ canvas {
   margin: 50px auto 3px;
 }
 
+.new_game {
+  height: 50px;
+  background-color: yellow;
+  color: black;
+  
+}
+
 #record {
   color: lightgreen;
 }
