@@ -354,6 +354,9 @@ Test.addEventListener("click", function (event) {
     }
   }
 });
+function startNewGame() {
+  location.reload();
+}
 // listen to keyboard events to move the active tetromino
 document.addEventListener("keydown", function (e) {
   if (gameOver) return;
