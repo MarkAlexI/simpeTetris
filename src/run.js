@@ -37,7 +37,7 @@ function generateSequence() {
 
 // get the next tetromino in the sequence
 function getNextTetromino() {
-  if (tetrominoSequence.length === 0) {
+  if (tetrominoSequence.length < 2) {
     generateSequence();
   }
 
@@ -260,7 +260,7 @@ const colors = {
 
 let count = 0;
 let tetromino = getNextTetromino();
-let newTetromino = tetrominoSequence[0];
+let newTetromino = tetrominoSequence[1];
 let rAF = null; // keep track of the animation frame so we can cancel it
 let gameOver = false;
 
