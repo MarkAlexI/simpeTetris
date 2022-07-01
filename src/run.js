@@ -184,6 +184,9 @@ const context = canvas.getContext("2d");
 const grid = 32;
 const tetrominoSequence = [];
 
+const next = document.getElementById("next");
+const ctx = next.getContext("2d");
+
 // keep track of what is in every cell of the game using a 2d array
 // tetris playfield is 10x20, with a few rows offscreen
 const playfield = [];
