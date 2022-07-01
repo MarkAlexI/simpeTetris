@@ -284,7 +284,7 @@ function loop() {
   }
   
   //draw the nextfield
-  for (let row = 0; row < 4; row++) {
+  /*for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
       if (nextfield[row][col]) {
         const nameNext = nextfield[row][col];
@@ -292,7 +292,9 @@ function loop() {
         ctx.fillRect(col * grid, row * grid, grid - 1, grid - 1);
       }
     }
-  }
+  }*/
+  ctx.fillStyle = "white";
+  ctx.fillRect(20, 20, 30, 40);
 
   let speed = 35;
   // draw the active tetromino
