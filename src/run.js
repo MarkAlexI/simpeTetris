@@ -293,7 +293,8 @@ function loop() {
       }
     }
   }*/
-  ctx.fillStyle = "white";
+  ctx.fillStyle = colors[newTetromino];
+  ///ctx.fillStyle = "white";
   ctx.fillRect(20, 20, 30, 40);
 
   let speed = 35;
