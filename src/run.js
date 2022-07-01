@@ -37,7 +37,7 @@ function generateSequence() {
 
 // get the next tetromino in the sequence
 function getNextTetromino() {
-  if (tetrominoSequence.length < 2) {
+  if (tetrominoSequence.length < 1) {
     generateSequence();
   }
 
@@ -190,7 +190,6 @@ const ctx = next.getContext("2d");
 // keep track of what is in every cell of the game using a 2d array
 // tetris playfield is 10x20, with a few rows offscreen
 const playfield = [];
-const nextfield = [];
 
 // populate the empty state
 for (let row = -2; row < 20; row++) {
@@ -200,13 +199,7 @@ for (let row = -2; row < 20; row++) {
     playfield[row][col] = 0;
   }
 }
-//empty starting for nextfield
-for (let row = 0; row < 4; row++) {
-  nextfield[row] = [];
-  for (let col = 0; col < 4; col++) {
-    nextfield[row][col] = 0;
-  }
-}
+
 // how to draw each tetromino
 // @see https://tetris.fandom.com/wiki/SRS
 const tetrominos = {
@@ -260,7 +253,7 @@ const colors = {
 
 let count = 0;
 let tetromino = getNextTetromino();
-let newTetromino = tetrominoSequence[1];
+let newTetromino;
 let rAF = null; // keep track of the animation frame so we can cancel it
 let gameOver = false;
 
@@ -282,24 +275,22 @@ function loop() {
       }
     }
   }
-  
-  //draw the nextfield
-  /*for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 4; col++) {
-      if (nextfield[row][col]) {
-        const nameNext = nextfield[row][col];
-        ctx.fillStyle = colors[nameNext];
-        ctx.fillRect(col * grid, row * grid, grid - 1, grid - 1);
-      }
-    }
-  }*/
-  ctx.fillStyle = colors[newTetromino];
-  ///ctx.fillStyle = "white";
-  ctx.fillRect(20, 20, 30, 40);
 
   let speed = 35;
   // draw the active tetromino
   if (tetromino) {
+    newTetromino = tetrominoSequence[tetrominoSequence.length - 1];
+    ctx.fillStyle = colors[newTetromino];
+  
+    //draw the nextfield
+    for (let row = 0; row < tetrominos[newTetromino].length; row++) {
+      for (let col = 0; col < tetrominos[newTetromino][0].length; col++) {
+        if (tetrominos[newTetromino][row][col]) {
+          ctx.fillRect(col * grid, row * grid, grid - 1, grid - 1);
+        }
+      }
+    }
+
     speed = 35 - (totalScore / 100) * 2;
     // tetromino falls every 35 frames
     if (++count > speed) {
