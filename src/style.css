@@ -22,7 +22,6 @@ body {
 canvas {
   float: left;
   display: block;
-  width: 320px;
   border: 1px solid white;
   margin: 2px;
 }
