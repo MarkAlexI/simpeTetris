@@ -276,10 +276,8 @@ function loop() {
     }
   }
 
-  let speed = 35;
-  // draw the active tetromino
-  if (tetromino) {
-    newTetromino = tetrominoSequence[tetrominoSequence.length - 1];
+  newTetromino = tetrominoSequence[tetrominoSequence.length - 1];
+  if (newTetromino) {
     ctx.fillStyle = colors[newTetromino];
   
     //draw the nextfield
@@ -290,7 +288,11 @@ function loop() {
         }
       }
     }
-
+  }
+  
+  let speed = 35;
+  // draw the active tetromino
+  if (tetromino) {
     speed = 35 - (totalScore / 100) * 2;
     // tetromino falls every 35 frames
     if (++count > speed) {
