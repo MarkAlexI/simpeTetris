@@ -154,11 +154,15 @@ function clearPause() {
   isPaused = false;
 }
 
-// show the game over screen
-function showGameOver() {
+// save max result
+function saveMaxResult() {
   +record.split(": ")[1] < totalScore
     ? localStorage.setItem("record", "MAX-" + gamerName + ": " + totalScore)
     : void 0;
+}
+// show the game over screen
+function showGameOver() {
+  saveMaxResult();
 
   cancelAnimationFrame(rAF);
   gameOver = true;
@@ -374,6 +378,7 @@ Test.addEventListener("click", function (event) {
   }
 });
 function startNewGame() {
+  saveMaxResult();
   location.reload();
 }
 // listen to keyboard events to move the active tetromino
