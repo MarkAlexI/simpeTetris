@@ -124,14 +124,24 @@ function placeTetromino() {
 //pause
 function goStop() {
   toggleButtonText();
+  toggleButtonStyle();
   isPaused ? clearPause() : setPause();
 }
+
 function toggleButtonText() {
   let buttonText = document.getElementById("pausegame");
   buttonText.innerText = buttonText.innerText === "▶" ? "⏸": "▶";
   buttonText = null;
   return;
 }
+
+function toggleButtonStyle() {
+  let button = document.getElementById("pausegame");
+  button.style.backgroundColor = button.innerText === "▶" ?  "red" : "blue";
+  button = null;
+  return;
+}
+
 function setPause() {
   isPaused = true;
   cancelAnimationFrame(rAF);
