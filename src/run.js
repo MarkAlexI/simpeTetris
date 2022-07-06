@@ -26,7 +26,7 @@ function getRandomInt(min, max) {
 // generate a new tetromino sequence
 // @see https://tetris.fandom.com/wiki/Random_Generator
 function generateSequence() {
-  const sequence = ["I", "J", "L", "O", "S", "T", "Z"];
+  const sequence = ["I", "J", "L", "O", "S", "T", "Z", "+"];
 
   while (sequence.length) {
     const rand = getRandomInt(0, sequence.length - 1);
@@ -252,6 +252,11 @@ const tetrominos = {
     [1, 1, 1],
     [0, 0, 0],
   ],
+  "+": [
+    [0, 1, 0],
+    [1, 1, 1],
+    [0, 1, 0],
+    ],
 };
 
 // color of each tetromino
@@ -263,6 +268,7 @@ const colors = {
   Z: "red",
   J: "blue",
   L: "orange",
+  "+": "grey",
 };
 
 let count = 0;
