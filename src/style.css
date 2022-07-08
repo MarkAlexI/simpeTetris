@@ -33,6 +33,7 @@ canvas {
   margin: 2px;
   padding-right: 5px;
   user-select: none;
+  font-size: 20px;
 }
 
 .row {
@@ -41,7 +42,6 @@ canvas {
 }
 
 .info {
-  font-size: 20px;
   margin-bottom: 15px;
 }
 
@@ -76,7 +76,7 @@ canvas {
 }
 
 .new_game {
-  height: 50px;
+  height: 30px;
   background-color: yellow;
   color: black;
   
