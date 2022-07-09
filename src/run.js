@@ -196,6 +196,7 @@ function showGameOver() {
 const canvas = document.getElementById("game");
 const context = canvas.getContext("2d");
 const grid = 32;
+const nextGrid = 25;
 const tetrominoSequence = [];
 
 const next = document.getElementById("next");
@@ -304,7 +305,7 @@ function loop() {
     for (let row = 0; row < tetrominos[newTetromino].length; row++) {
       for (let col = 0; col < tetrominos[newTetromino][0].length; col++) {
         if (tetrominos[newTetromino][row][col]) {
-          ctx.fillRect(col * grid, row * grid, grid - 1, grid - 1);
+          ctx.fillRect(col * nextGrid, row * nextGrid, nextGrid - 1, nextGrid - 1);
         }
       }
     }
