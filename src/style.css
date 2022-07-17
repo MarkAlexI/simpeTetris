@@ -89,3 +89,27 @@ canvas {
 #scores {
   color: white;
 }
+
+@media(max-width: 450px) {
+  .tetris {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .wrapper::before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .wrapper {
+    display: inline-block;
+    float: left;
+    width: 300px;
+  }
+  .tetris {
+    height: 1000px;
+  }
+  .pause {
+    display: inline-block;
+    margin: 10px;
+  }
+}
