@@ -9,10 +9,10 @@ let score = 100,
 const outScore = document.getElementById("scores");
 const maxScore = document.getElementById("record");
 const displayScore = () => {
-  outScore.innerText = gamerName + ": " + totalScore;
+  outScore.textContent = gamerName + ": " + totalScore;
 };
 let record = localStorage.getItem("record") || "MAX-unknown: 0";
-maxScore.innerText = record;
+maxScore.textContent = record;
 displayScore();
 let isPaused = false;
 
@@ -130,14 +130,14 @@ function goStop() {
 
 function toggleButtonText() {
   let buttonText = document.getElementById("pausegame");
-  buttonText.innerText = buttonText.innerText === "▶" ? "⏸": "▶";
+  buttonText.textContent = buttonText.textContent === "▶" ? "⏸": "▶";
   buttonText = null;
   return;
 }
 
 function toggleButtonStyle() {
   let button = document.getElementById("pausegame");
-  button.style.backgroundColor = button.innerText === "▶" ?  "red" : "blue";
+  button.style.backgroundColor = button.textContent === "▶" ?  "red" : "blue";
   button = null;
   return;
 }
