@@ -354,6 +354,8 @@ pause.addEventListener("click", function (event) {
 
 const Test = document.querySelector(".wrapper");
 Test.addEventListener("click", function (event) {
+  event.preventDefault();
+  
   if (gameOver) return;
 
   let targetItem = event.target;
