@@ -90,7 +90,16 @@ canvas {
   color: white;
 }
 
+@media(max-width: 620px) {
+  body {
+    width: 620px;
+  }
+}
+
 @media(max-width: 450px) {
+  body {
+    width: 500px;
+  }
   .tetris {
     margin-left: 20px;
     margin-top: 20px;
